@@ -1,0 +1,31 @@
+{
+  "name": "js-tool",
+  "version": "1.0.0",
+  "main": "tool.js",
+  "scripts": {
+    "start": "nodemon --inspect tool.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhuocAn010205/nodejs_blog.git"
+  },
+  "keywords": [
+    "tool",
+    "js",
+    "blog"
+  ],
+  "author": "Andepzai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhuocAn010205/nodejs_blog/issues"
+  },
+  "homepage": "https://github.com/PhuocAn010205/nodejs_blog#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
