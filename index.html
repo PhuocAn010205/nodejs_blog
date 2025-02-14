@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        .results {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .results div {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .results div:hover {
+            background: #f0f0f0;
+        }
+        .char-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search for a Product</h2>
+    <input type="text" id="search" placeholder="Enter product name..." onkeyup="searchProduct()">
+    <div class="results" id="results"></div>
+    <div class="char-result" id="charResult"></div>
+
+    <script>
+        const productTypes = [
+            "Area Rug", "Back Car Seat Cover", "Baseball Jacket", "Baseball Jersey", "Beach Blanket", "Bedding Set", 
+            "Blanket", "Bomber Jacket", "Button Sweatshirt", "Canvas Wall Art", "Capri Leggings", "Car Mats", "Car Seat Cover", 
+            "Ceramic Ornament", "Garden Flag", "Hawaiian Shirt", "Hooded Blanket", "Hoodie", "Hoodie Dress", "Kid Hawaiian Shirt",
+            "Kid Hoodie", "Kid Knitted Sweatshirt", "Kid Polo Shirt", "Kid Short Sleeve Dress", "Kid T Shirt", "Kid Ugly Christmas Sweater",
+            "Knitted Sweatshirt", "Lavalava", "Leather Tote Bag", "Leggings", "Long Sleeve Bodycon Dress", "Long Sleeve Button Shirt",
+            "Long Sleeve Button Shirts", "Long Sleeve Shirt", "Long Sleeve Shirts", "Luggage Cover", "Men Tank Top", "Mermaid Dress",
+            "Off Shoulder Maxi Dress", "Off Shoulder Short Dress", "Off Shoulder Sweater", "Off The Shoulder Long Sleeve Dress", "PoloShirt",
+            "Puletasi", "Puletasi Dress", "Quilt", "Quilt Bed Set", "Raglan Cropped T Shirt", "Round Carpets", "Rubber Doormat", "Rugby Jersey",
+            "Sarong", "Sherpa Hoodie", "Short Sleeve Bodycon Dress", "Shoulder Handbag", "Shower Curtain", "Skinny Tumbler", "Sleeve Zip Bomber Jacket",
+            "Spare Tire Cover", "Steering Wheel Cover", "Summer Maxi Dress", "Sweatshirt", "T Shirt", "Tablecloth", "Tank Maxi Dress", "Tapestry",
+            "Tree Skirt", "Tumbler", "Tumbler Cup", "Tumbler With Handle", "Ugly Christmas Sweater", "Wearable Blanket Hoodie", "Window Curtain",
+            "Women Casual Shirt", "Women Polo Shirt", "Women Sleeveless Polo Shirt", "Women V-Neck T-Shirt", "Zip Hoodie"
+        ];
+
+        function searchProduct() {
+            let input = document.getElementById('search').value.toLowerCase().trim();
+            let resultsDiv = document.getElementById('results');
+            let charResultDiv = document.getElementById('charResult');
+            resultsDiv.innerHTML = '';
+            charResultDiv.textContent = '';
+
+            if (input.length === 0) {
+                return;
+            }
+
+            let matchedWords = productTypes.filter(product => 
+                product.toLowerCase().includes(input)
+            );
+
+            if (matchedWords.length > 0) {
+                charResultDiv.textContent = `Matched Products: ${matchedWords.length}`;
+            } else {
+                charResultDiv.textContent = "No match found.";
+            }
+
+            matchedWords.forEach(product => {
+                let div = document.createElement('div');
+                div.textContent = product;
+                resultsDiv.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
