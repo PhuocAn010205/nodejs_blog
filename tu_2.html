@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>// Chương trình kiểm tra số ngày trong tháng bằng JavaScript
+
+        // Nhập tháng từ người dùng
+        const month = parseInt(prompt("Nhập tháng (1-12):"));
+        
+        // Kiểm tra số ngày trong tháng
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log(`Tháng ${month} có 31 ngày`);
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                console.log(`Tháng ${month} có 30 ngày`);
+                break;
+            case 2:
+                console.log(`Tháng ${month} có 28 ngày`);
+                break;
+            default:
+                console.log("Tháng không hợp lệ");
+        }</script>
+</body>
+</html>
