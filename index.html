@@ -7,16 +7,27 @@
 </head>
 <body>
     <script>
-    // Sử dụng prompt để nhập số từ người dùng
-let so = parseInt(prompt("Nhập số:"));
+            function tinhDiemTB(diemToan, diemLy, diemHoa){
+              return((diemToan + diemLy + diemHoa)/3);
+            }
+            const diemToan1=8;
+            const diemLy1 = 7;
+            const diemHoa1=6;
+            const diemTB1=tinhDiemTB(diemToan1,diemLy1,diemHoa1 );
+            console.log("Diem TB SV 1",diemTB1);
 
-// Kiểm tra nếu số chia hết cho 2 (số chẵn)
-if (so % 2 === 0) {
-    console.log(so + " là số chẵn");
-} else if (Math.abs(so) % 2 === 1) { 
-    console.log(so + " là số lẻ");
-}
+            const diemToan2=8;
+            const diemLy2 = 9;
+            const diemHoa2=8;
+            const diemTB2=tinhDiemTB(diemToan2,diemLy2,diemHoa2 );
+            console.log("Diem TB SV 2",diemTB2);
 
+            
+            const diemToan3=9;
+            const diemLy3 = 9;
+            const diemHoa3=9;
+            const diemTB3=tinhDiemTB(diemToan3,diemLy3,diemHoa3 );
+            console.log("Diem TB SV 3",diemTB3);
     </script>
 </body>
 
