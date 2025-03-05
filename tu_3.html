@@ -7,19 +7,19 @@
 </head>
 <body>
     <script>
-        function doiViTri(a, b) {               
-            a = b + a;
-            b = a - b;
-            a = a - b; 
-            return `a: ${a}, b: ${b}`;
+       
+        function doiNgayThang(date){
+            var arrDate= date.split("-");
+            return arrDate[2] + "-" + arrDate[1] + "-" + arrDate[0];
+            var Date = new Date(date);
+            return Date
         }
-    </script>
+        const datel= doiNgayThang("01-02-2005");
+        console.log(`Sinh của an đẹp zai là ${datel}`); 
+        console.log(Date)
+        const date2= doiNgayThang("02-03-2005");
+        console.log(`Sinh của an đẹp zai là ${date2}`);
 
-    console.log(doiViTri(3, 5)); // a: 5, b: 3
-    console.log(doiViTri(10, 20)); // a: 20, b: 10
-    console.log(doiViTri(-1, 1)); // a: 1, b: -1
-    console.log(doiViTri(0, 0)); // a: 0, b: 0
-    console.log(doiViTri(100, 200)); // a: 200, b: 100
 </script>
 </body>
 </html>
