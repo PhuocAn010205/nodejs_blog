@@ -7,27 +7,16 @@
 </head>
 <body>
     <script>
-            function tinhDiemTB(diemToan = 0, diemLy = 0, diemHoa = 0){
-              return((diemToan + diemLy + diemHoa)/3);
-            }
-            const diemToan1=8;
-            const diemLy1 = 7;
-            const diemHoa1=6;
-            const diemTB1=tinhDiemTB(diemToan1,diemLy1,diemHoa1 );
-            console.log("Diem TB SV 1",diemTB1);
-
-            const diemToan2=8;
-            const diemLy2 = 9;
-            const diemHoa2=8;
-            const diemTB2=tinhDiemTB(diemToan2,diemLy2,diemHoa2 );
-            console.log("Diem TB SV 2",diemTB2);
-
-            
-            const diemToan3=9;
-            const diemLy3 = 9;
-            const diemHoa3=9;
-            const diemTB3=tinhDiemTB(diemToan3,diemLy3,diemHoa3 );
-            console.log("Diem TB SV 3",diemTB3);
+           function createLink(title, url) {
+           
+            return `<a href="${url}">${title}</a>`;
+          }
+          const link1 = createLink("Google", "https://www.google.com");
+          console.log(link1);
+          const link2 =createLink("Facebook", "https://www.facebook.com");
+          console.log(link2);
+          const link3 = createLink("Youtube", "https://www.youtube.com");       
+          console.log(link3);
     </script>
 </body>
 

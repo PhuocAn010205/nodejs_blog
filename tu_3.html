@@ -1,65 +1,25 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tính Tổng Chi Phí Mua Táo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        input {
-            padding: 10px;
-            margin: 5px;
-            width: 200px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: blue;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkblue;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-
-    <h2>Tính Tổng Chi Phí Mua Táo</h2>
-    
-    <label for="soLuong">Nhập số lượng táo:</label>
-    <input type="number" id="soLuong" placeholder="Nhập số lượng"><br>
-
-    <label for="gia">Nhập giá mỗi quả táo:</label>
-    <input type="number" id="gia" placeholder="Nhập giá"><br>
-
-    <button onclick="tinhChiPhi()">Tính Tổng</button>
-
-    <h3 id="ketQua"></h3>
-
     <script>
-        function tinhChiPhi() {
-            // Lấy giá trị nhập vào từ ô input
-            const soLuong = parseInt(document.getElementById("soLuong").value);
-            const gia = parseInt(document.getElementById("gia").value);
-
-            // Kiểm tra nếu người dùng chưa nhập hoặc nhập sai
-            if (isNaN(soLuong) || isNaN(gia) || soLuong <= 0 || gia <= 0) {
-                document.getElementById("ketQua").innerText = "Vui lòng nhập số hợp lệ!";
-                return;
-            }
-
-            // Tính tổng chi phí
-            let tongChiPhi = soLuong * gia;
-
-            // Hiển thị kết quả
-            document.getElementById("ketQua").innerText = "Tổng chi phí mua táo là: " + tongChiPhi + " VND";
+        function doiViTri(a, b) {               
+            a = b + a;
+            b = a - b;
+            a = a - b; 
+            return `a: ${a}, b: ${b}`;
         }
     </script>
 
+    console.log(doiViTri(3, 5)); // a: 5, b: 3
+    console.log(doiViTri(10, 20)); // a: 20, b: 10
+    console.log(doiViTri(-1, 1)); // a: 1, b: -1
+    console.log(doiViTri(0, 0)); // a: 0, b: 0
+    console.log(doiViTri(100, 200)); // a: 200, b: 100
+</script>
 </body>
 </html>
