@@ -8,17 +8,18 @@
 <body>
     <script>
        
-        function doiNgayThang(date){
-            var arrDate= date.split("-");
-            return arrDate[2] + "-" + arrDate[1] + "-" + arrDate[0];
-            var Date = new Date(date);
-            return Date
+        function soChiaHetCho2(a=0,b=0) {
+            let tong = (a + b)
+            if(tong %2 ===0){
+                return `Tổng của ${a} và ${b} là ${tong} chia hết cho 2`;
+            }else{
+                return `Tổng của ${a} và ${b} là ${tong} không chia hết cho 2`;
+            }
         }
-        const datel= doiNgayThang("01-02-2005");
-        console.log(`Sinh của an đẹp zai là ${datel}`); 
-        console.log(Date)
-        const date2= doiNgayThang("02-03-2005");
-        console.log(`Sinh của an đẹp zai là ${date2}`);
+        const giaTri1 = soChiaHetCho2(2, 3);
+        console.log(giaTri1);   
+        const giaTri2 = soChiaHetCho2(4, 6);
+        console.log(giaTri2);
 
 </script>
 </body>
