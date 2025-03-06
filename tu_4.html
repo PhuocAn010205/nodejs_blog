@@ -4,19 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <input type="number" name="Nhap thang" id="nhapthang" placeholder="Nhập tháng">
+    <input type="number" name="Nhap nam" id="nhapnam" placeholder="Nhập năm">
 </head>
 <body>
     <script>
-        function gioiiThieu(trichDan,tacGia)
-        {
-            return `Trich dan: ${trichDan}, Tac gia: ${tacGia}`;
+        // Hàm lấy dữ liệu từ các ô input
+        function layDuLieuNhap() {
+            const nhapThang = parseInt(document.getElementById('nhapthang').valuee);
+            const nhapNam = document.getElementById(`${nhapnam}`).value; // Lấy giá trị dưới dạng chuỗi
+            let result = `Dữ liệu người dùng nhập: Tháng: ${nhapThang}, Năm: ${nhapNam}. `;
+
+            if (nhapThang === 1) {
+                if (parseInt(nhapNam) % 4 === 0) {
+                    result += 'Tháng 1 có 29 ngày';
+                } else {
+                    result += 'Tháng 1 có 28 ngày';
+                }
+            } else if (nhapThang === 2) {
+                if (parseInt(nhapNam) % 4 === 0) {
+                    result += 'Tháng 2 có 29 ngày';
+                } else {
+                    result += 'Tháng 2 có 28 ngày';
+                }
+            } else if (nhapThang === 3) {
+                result += 'Tháng 3 có 31 ngày';
+            } else if (nhapThang === 4) {
+                result += 'Tháng 4 có 30 ngày';
+            } else if (nhapThang === 5) {
+                result += 'Tháng 5 có 31 ngày';
+            } else if (nhapThang === 6) {
+                result += 'Tháng 6 có 30 ngày';
+            } else if (nhapThang === 7) {
+                result += 'Tháng 7 có 31 ngày';
+            } else if (nhapThang === 8) {
+                result += 'Tháng 8 có 31 ngày';
+            } else if (nhapThang === 9) {
+                result += 'Tháng 9 có 30 ngày';
+            } else if (nhapThang === 10) {
+                result += 'Tháng 10 có 31 ngày';
+            } else if (nhapThang === 11) {
+                result += 'Tháng 11 có 30 ngày';
+            } else if (nhapThang === 12) {
+                result += 'Tháng 12 có 31 ngày';
+            } else {
+                result += 'Không phải tháng trong năm';
+            }
+
+            console.log(result);
         }
-        const trichDan1=gioiiThieu("Anh yeu em","Nguyen Van A");
-        console.log(trichDan1);
-        const trichDan2=gioiiThieu("Em yeu anh","Huynh Nguyen Phuoc An");
-        console.log(trichDan2);
-        const trichDan3 = gioiiThieu("Đừng hỏi tại sao anh em hay vào đấy em nên hỏi anh yêu em nhiều không","Huỳnh Nguyễn Phước An");
-        console.log(trichDan3);
+
+        // Gọi hàm khi người dùng thay đổi giá trị trong các ô input
+        document.getElementById('nhapthang').addEventListener('input', layDuLieuNhap);
+        document.getElementById('nhapnam').addEventListener('input', layDuLieuNhap);
     </script>
 </body>
 </html>
