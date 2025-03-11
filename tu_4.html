@@ -6,7 +6,7 @@
     <title>Kiểm tra tháng và năm nhuận</title>
 </head>
 <body>
-    <h2>Kiểm tra tháng và năm nhuận</h2>
+    <h2 >Kiểm tra tháng và năm nhuận</h2>
 
     <label>Nhập năm:</label>
     <input type="number" id="year" placeholder="Nhập năm"><br><br>
@@ -30,7 +30,7 @@
 
             // Kiểm tra nếu nhập sai
             if (isNaN(nam) || isNaN(thang) || thang < 1 || thang > 12 || nam <= 0) {
-                document.getElementById("result").innerText = "❌ Vui lòng nhập năm và tháng hợp lệ!";
+                document.getElementById("result").innerText = " Vui lòng nhập năm và tháng hợp lệ!";
                 return;
             }
 
@@ -65,7 +65,7 @@
             }
         
             // Hiển thị kết quả
-            let ketQua =  `Năm ${nam} ${laNamNhuan ? "là" : "không phải"} năm nhuận.\n Tháng ${thang} có ${soNgay} ngày.`;
+            let ketQua =  `Năm ${nam} ${laNamNhuan ? "là" : "không phải"} năm nhuận.\nTháng ${thang} có ${soNgay} ngày.`;
             document.getElementById("result").innerText = ketQua;
         }
     </script>
