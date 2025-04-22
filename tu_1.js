@@ -12,3 +12,4 @@ function canAttendTechSeminar(age, isITEmployee, hasRegistered){
         return false;
     }
 }
+// nếu đk là true thì chỉ cần thêm tên biến 

@@ -3,7 +3,7 @@
 //  Điều kiện: số lượng ban nhạc ít nhất là 5, có đủ ngân sách quảng cáo, 
 // và dự báo thời tiết không có mưa.
 function canOrganizeMusicFestival(bandCount, hasEnoughBudget, weatherForecast){
-    if(bandCount>=5 &&hasEnoughBudget && weatherForecast!="rainy"){
+    if(bandCount>=5 &&hasEnoughBudget && weatherForecast!=="rainy"){
         return true;
     }else {
         return false;
