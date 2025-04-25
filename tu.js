@@ -1,9 +1,14 @@
-console.log(isHealthy(70, 37)); // true
-console.log(isHealthy(55, 37)); // false
-function isHealthy (heartRate,temperature) {
-    if(heartRate >=60 && heartRate<=100 && temperature >=36.5 && temperature<=37.5){
-      console.log("Người này có sức khỏe bình thường")
-    }else {
-        console.log("Sức khỏe không ổn định")
-    }
-};
+
+// bai 2
+// tạo 1 hàm createUser để tạo người dùng với các thuộc tính: tên, tuổi, địa chỉ và số điện thoại.
+function createUser(name, age, address, phone) {
+  return {
+    name:name ,
+    age: age ,
+    address:address,
+    phone: phone 
+  };
+}
+
+const user1 = createUser("Huỳnh Nguyễn Phước An ", 20, "Đồng Nai  ", "0908633028 ");
+console.log(user1); // { name: 'Huỳnh Nguyễn Phước An ', age: 20, address: 'Đồng Nai  ', phone: '0908633028 ' }
