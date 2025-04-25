@@ -1,5 +1,6 @@
-function giaThue (gia){
-  const thue=0.1;
-  return gia *(1+thue);
+function checkDataType(value){
+   return  typeof value;
 }
-console.log(typeof giaThue); // number
+console.log(checkDataType(42)); // number
+console.log(checkDataType("Hello world")); // string
+console.log(checkDataType({name: "John"})); // object
