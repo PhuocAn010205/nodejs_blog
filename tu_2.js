@@ -128,12 +128,11 @@ console.log(isString("Trần B"));
 console.log(isString(123));
 
 function calculateAge(currentYear,birthYear) {
- if (typeof currentYear !== "number" || typeof birthYear !== "number" ) 
+ if (!isNaN(currentYear) || isNaN(birthYear)) 
   {
     return -1;
-  }else if  (!isFinite(currentYear) || !isFinite(birthYear)) {
-    return -1;
-  }else{
+  }
+  else{
     return currentYear - birthYear;
   }
 }
