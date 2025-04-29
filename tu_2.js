@@ -128,7 +128,7 @@ console.log(isString("Trần B"));
 console.log(isString(123));
 
 function calculateAge(currentYear,birthYear) {
- if (!isNaN(currentYear) || isNaN(birthYear)) 
+ if (typeof currentYear !== "number" || typeof birthYear !== "number" || !isNaN(currentYear) || isNaN(birthYear)) 
   {
     return -1;
   }
@@ -167,3 +167,45 @@ console.log(checkEmpty(undefined)); // Trống
 console.log(checkEmpty()); // Trống
 console.log(checkEmpty(123)); // Không trống
 console.log(checkEmpty([])); // Không trống
+
+function isValueUndefined(value) {
+  if(value === void 0){
+      return true;
+  }else {
+      return false;
+  }
+}
+
+// Sample usage
+console.log(isValueUndefined(undefined)); // true
+console.log(isValueUndefined(void 0)); // true
+console.log(isValueUndefined(null)); // false
+console.log(isValueUndefined(0)); // false
+console.log(isValueUndefined('')); // false
+
+function validateUser(user) {
+  if (typeof user.name !== "string" || user.name.trim() === "") {
+    return "Tên không hợp lệ";
+  }
+
+  if (typeof user.email !== "string" || !user.email.includes("@")) {
+    return "Email không hợp lệ";
+  }
+
+  if (typeof user.age !== "number" || !isFinite(user.age) || user.age < 0 || user.age > 120) {
+    return "Tuổi không hợp lệ";
+  }
+
+  return "Hợp lệ";
+}
+console.log(validateUser({ name: "Alice", email: "alice@gmail.com", age: 25 }));
+// ✅ Output: "Valid"
+
+console.log(validateUser({ name: "", email: "alice@gmail.com", age: 25 }));
+// ❌ Output: "Invalid name"
+
+console.log(validateUser({ name: "Bob", email: "bobgmail.com", age: 25 }));
+// ❌ Output: "Invalid email"
+
+console.log(validateUser({ name: "Tom", email: "tom@gmail.com", age: 150 }));
+// ❌ Output: "Invalid age"
