@@ -209,3 +209,67 @@ console.log(validateUser({ name: "Bob", email: "bobgmail.com", age: 25 }));
 
 console.log(validateUser({ name: "Tom", email: "tom@gmail.com", age: 150 }));
 // ❌ Output: "Invalid age"
+
+
+// xử lí thông tin người dùng 
+
+let numberA = 5;
+let numberB = 5;
+function isNumber(value){
+  return typeof value === "number" && !isNaN(value);
+}
+if(isNumber(numberA)&& isNumber(numberB)){
+  console.log(`Tổng A + B là: ${numberA + numberB}`);
+}else {
+  console.log("Giá trị không hợp lệ");
+}
+ function convertDataType(value, type){
+  switch(type){
+    case "number":
+      return Number(value);
+    case "string":  
+       return String(value);
+    case "boolean": 
+    return Boolean(value);
+    default:
+      return "Invalid type";
+  }
+ }
+
+console.log(convertDataType("123", "number")); // 123
+console.log(convertDataType(123, "string"));   // "123"
+console.log(convertDataType(1, "boolean"));    // true
+console.log(convertDataType(123, "object"));   // Invalid type
+
+function calculate(a, b, operator) {
+   const num1 =Number(a);
+   const num2 = Number(b);// chuyen dl ve kieu number
+  if (isNaN(num1) || isNaN(num2)) // kiểm tra nếu không phải là số 
+  {
+    return "Số đầu vào không hợp lệ"; //Invalid input number
+}
+
+  switch (operator) {
+    case "add":
+      return  num1 + num2;
+    case "subtract":
+      return num1 - num2;
+    case "multiply":
+      return num1 * num2;
+    case "divide":
+      if (num2 === 0) {
+        return "Không thể chia cho 0";
+      }
+      return Number(num1) / Number(num2);
+    default:
+      return "Toán tử không hợp lệ";//Invalid operator
+  }
+
+}
+console.log(calculate("5", "3", "add"));      // 8
+console.log(calculate("5", "3", "subtract")); // 2
+console.log(calculate("5", "3", "multiply")); // 15
+console.log(calculate("5", "0", "divide"));   // Cannot divide by zero
+console.log(calculate("five", "3", "add"));   // Invalid input number
+console.log(calculate("5", "three", "add"));  // Invalid input number
+console.log(calculate("5", "3", "modulus"));  // Invalid operator
