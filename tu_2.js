@@ -273,3 +273,46 @@ console.log(calculate("5", "0", "divide"));   // Cannot divide by zero
 console.log(calculate("five", "3", "add"));   // Invalid input number
 console.log(calculate("5", "three", "add"));  // Invalid input number
 console.log(calculate("5", "3", "modulus"));  // Invalid operator
+
+
+// Tim hieu ve truthy va falsy
+let cmt ="";
+
+if(cmt){
+  console.log("Đây là chuỗi có dữ liệu"); // Đoạn này sẽ không chạy vì String là chuỗi rỗng
+
+}else{
+  console.log("Đây là một chuỗi rỗng"); // Đoạn này sẽ chạy vì String là chuỗi rỗng
+}
+//kiem tra objecct
+let obj = {
+  name: "An",
+  age: 20,
+  address: "Đồng Nai",
+  phone: "0908633028"
+};
+if(obj && typeof obj === "object"){
+  console.log("Đây là một object"); // Đoạn này sẽ chạy vì obj là một object
+}else {
+  console.log("Đây không phải là một object"); // Đoạn này sẽ không chạy vì obj là một object
+}
+
+// kiem tra or 
+let firstName = "";
+let lastName = "An dep trai";
+if(firstName || lastName){
+  console.log("Có ít nhất một biến có giá trị truthy"); // Đoạn này sẽ chạy vì lastName có giá trị truthy
+}else {
+  console.log("Tất cả các biến đều có giá trị falsy"); // Đoạn này sẽ không chạy vì lastName có giá trị truthy
+}
+
+// cach dung if else de kiem tra trong and or
+
+let hello ="Hello world!";
+if (hello){
+  console.log("Xin chao the gioi!"); // Đoạn này sẽ chạy vì hello có giá trị truthy
+}
+
+//dung and or 
+let Hello="Hello world!";
+ Hello && console.log("Xin chao the gioi!"); // Đoạn này sẽ chạy vì hello có giá trị truthy
