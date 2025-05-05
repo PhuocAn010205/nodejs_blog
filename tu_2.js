@@ -316,3 +316,73 @@ if (hello){
 //dung and or 
 let Hello="Hello world!";
  Hello && console.log("Xin chao the gioi!"); // Đoạn này sẽ chạy vì hello có giá trị truthy
+
+ function isObject(input) {
+  return !!input && typeof input ==="object";
+}
+
+// Sample usage
+console.log(isObject(null)); // false
+console.log(isObject({ name: "John Smith" })); // true
+
+function showMessage(message){
+  message && console.log(message)
+}
+showMessage(""); // Không in gì cả
+showMessage("Hello World!"); // In ra "Hello World!"
+
+
+let tenNguoiDung="Huynh Nguyen Phuoc An";
+let macDinh="Khach";
+
+let tenHienThi=tenNguoiDung ?? macDinh;
+console.log(tenHienThi); // Huynh Nguyen Phuoc An
+
+let ten=null;
+let macdinh="Khach";
+
+let tenhienThi=ten ?? macdinh;
+console.log(tenHienThi); // Khach
+
+function checkValue(array,index,defaultvalue) {
+  return array[index] || defaultvalue; // nếu không có giá
+}
+
+let numbervalue =[5,6,8];
+console.log(checkValue(numbervalue, 0, "Error")); // 5
+console.log(checkValue(numbervalue, 3, "Error")); // Error
+console.log(checkValue(numbervalue, 1, "Error")); // 6
+console.log(checkValue(numbervalue, 2, "Error")); // 8
+
+function validateAge(age) {
+  if (age === null || age === undefined) {
+    return "Error: Age is null or undefined";
+  }
+  return !isNaN(age) && typeof age === "number" && age >= 0; // true nếu age là số và lớn hơn hoặc bằng 0
+  // false nếu age không phải là số hoặc nhỏ hơn 0
+}
+
+// Sample usage
+console.log(validateAge(25));    // true
+console.log(validateAge(null));  // "Error: Age is null or undefined"
+console.log(validateAge(-5));    // false
+
+/**
+ * Formats a full name by concatenating first name and last name.
+ * If either firstName or lastName is null or undefined, it is replaced by an empty string.
+ * @param {string|null|undefined} firstName - The first name.
+ * @param {string|null|undefined} lastName - The last name.
+ * @returns {string} - The formatted full name.
+ */
+function formatName(firstName, lastName) {
+  const formattedFirstName = firstName ?? "";// Nếu firstName là null hoặc undefined, thay thế bằng chuỗi rỗng
+  const formattedLastName = lastName ?? "";// Nếu lastName là null hoặc undefined, thay thế bằng chuỗi rỗng
+  return `${formattedFirstName} ${formattedLastName}`;// Kết hợp firstName và lastName với một khoảng trắng giữa chúng
+  // và trả về kết quả
+}
+
+// Sample usage
+console.log(formatName("John", "Doe")); // John Doe
+console.log(formatName(null, "Doe"));   // Doe
+console.log(formatName("John"));        // John
+console.log(formatName());              //
