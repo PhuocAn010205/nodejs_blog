@@ -386,3 +386,238 @@ console.log(formatName("John", "Doe")); // John Doe
 console.log(formatName(null, "Doe"));   // Doe
 console.log(formatName("John"));        // John
 console.log(formatName());              //
+// vòng lặp for
+// vòng lặp for là vòng lặp chạy từ 1 đến 5
+for(let i=1;i<=5;i++){
+  console.log(i);
+}
+let userName=["An","Thien","Hao"];// tạo một mảng tên người dùng
+// vòng lặp for để duyệt qua từng phần tử trong mảng userName
+for (let i = 0; i < userName.length; i++) {
+  console.log(userName[i]); // In ra từng tên trong mảng
+}
+//Viết một hàm printNumbers nhận vào hai tham số là start (số bắt đầu) và end (số kết thúc). 
+// Hàm này sẽ in ra console tất cả các số từ start đến end.
+function printNumbers(start,end){
+  for(let i=start; i <= end ;i++){
+   console.log(i)
+  }
+}
+printNumbers(1, 5);
+// 1
+// 2
+// 3
+// 4
+// 5
+
+// Viết một hàm reverseString nhận vào một chuỗi và trả về chuỗi đó được đảo ngược.
+function reverseString(str) {
+  let reversed = '';// Khởi tạo biến reversed là chuỗi rỗng
+  for (let i = str.length - 1; i >= 0; i--) // Duyệt từ cuối chuỗi đến đầu chuỗi
+    {
+      reversed += str[i];// Nối từng ký tự vào biến reversed
+  }
+  return reversed;// Trả về chuỗi đã đảo ngược
+}
+
+// Sample usage
+console.log(reverseString("hello")); // "olleh"
+console.log(reverseString("world")); // "dlrow"
+console.log(reverseString("JavaScript")); // "tpircSavaJ"
+// Viết một hàm findMax nhận vào một mảng số và trả về số lớn nhất trong mảng đó.
+function findMax(arr){
+  let max=arr[0];
+  for(let i=0;i < arr.length;i++){
+      if(arr[i]>max){
+         max = arr[i];
+      }
+  }
+  return max;
+}
+console.log(findMax([1, 3, 5, 7, 9])); // 9
+console.log(findMax([10, 20, 30, 40, 50])); // 50
+console.log(findMax([-5, -2, -1, -3])); // -1
+
+//Viết hàm listEvenNumbers nhận vào hai tham số là start và end, 
+// sau đó in ra tất cả các số chẵn từ start đến end sử dụng vòng lặp for.
+function listEvenNumbers(start,end){
+  for(let i=start;i <=end;i++){
+      if(i %2 === 0){
+        console.log(i)
+      }
+ 
+  }
+}
+listEvenNumbers(1, 10);
+// 2
+// 4
+// 6
+// 8
+// 10
+
+//Viết hàm sumOddNumbers nhận vào một mảng số và trả về tổng của
+//  tất cả các số lẻ trong mảng đó sử dụng vòng lặp for.
+
+// Sample usage
+function sumOddNumbers(arr){
+  let sum = 0;
+  for( let i =0 ;i < arr.length;i++){
+      if(arr[i] %2 !==0){
+          sum +=arr[i];
+      }
+  }
+  return sum;
+}
+console.log(sumOddNumbers([1, 2, 3, 4, 5])); // 9
+
+
+// Viết hàm findMin nhận vào một mảng số và trả về 
+// số nhỏ nhất trong mảng đó sử dụng vòng lặp for.
+// Sample usage
+function findMin(arr){
+  let min = arr[0];
+  for(let i =0 ; i< arr.length;i++)
+  {
+      if(min>arr[i]){
+          min =arr[i];
+      }
+  }
+  return min;
+}
+console.log(findMin([5, 2, 8, 1, 4])); // 1
+
+//Viết hàm countPositiveNumbers nhận vào một mảng số và trả về số lượng số dương trong mảng đó.
+
+// Sample usage
+function countPositiveNumbers(arr){
+  let num = 0 ;
+  for(let i = 0;i< arr.length;i++){
+      if(arr[i]>0){
+          num++;
+      }
+  }
+  return num;
+}
+console.log(countPositiveNumbers([-1, 2, 3, -4, 5])); // 3
+
+//Viết hàm sumArray nhận vào một mảng số và trả về 
+// tổng của tất cả các số trong mảng đó.
+
+
+// Sample usage
+function sumArray(arr){
+  let sum =0;
+  for (let i =0 ; i< arr.length;i++){
+      sum +=arr[i];
+  }
+  return sum;
+ } 
+console.log(sumArray([1, 2, 3, 4, 5])); // 15
+
+//Viết hàm calculateAverage 
+// nhận vào một mảng số và trả về trung bình cộng của các 
+// số trong mảng đó, trả về 0 nếu mảng trống.
+
+
+// Sample usage
+function calculateAverage(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+  }
+  return numbers.length > 0 ? sum / numbers.length : 0;// Trả về 0 nếu mảng trống
+}
+console.log(calculateAverage([10, 20, 30, 40, 50])); // 30
+
+//Viết hàm isAscending nhận vào một mảng số và kiểm 
+// tra xem mảng đó có phải là dãy số tăng dần không. Trường hợp mảng chỉ 
+// có một phần tử hoặc mảng rỗng không được coi là mảng tăng dần.
+
+// Sample usage
+function isAscending(arr) {
+  if (arr.length <= 1) return false;
+  for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] >= arr[i + 1]) {
+          return false;
+      }
+  }
+  return true;
+}
+console.log(isAscending([1, 2, 3, 5])); // true
+
+//Viết hàm isPrime nhận vào một số nguyên n 
+// và trả về true nếu n là số nguyên tố, ngược lại trả về false.
+
+
+// Sample usage
+function isPrime(n) {
+  if (n <= 1) return false;
+  for (let i = 2; i * i <= n; i++) {
+      if (n % i === 0) 
+      return false;
+  }
+  return true;
+}
+console.log(isPrime(2)); // true
+
+//Viết hàm sumPrimes nhận vào hai số nguyên 
+// start và end, sau đó tính và trả về tổng của tất cả các số nguyên tố trong khoảng từ start đến end.
+
+// Sample usage
+function sumPrimes(start,end){
+  let sum=0;
+  for(let i =start;i<=end;i++){
+      if(isPrime(i)){
+          sum+=i;
+      }
+  }
+  return sum;
+}
+console.log(sumPrimes(10, 20)); // 60
+
+//Viết một hàm repeatChar nhận vào hai tham số: character và n. 
+// Hàm này sẽ trả về một chuỗi gồm kí tự character được lặp lại n lần.
+
+
+// Sample usage
+function repeatChar(character,n){
+  let num="";
+  for(let i=0;i<n;i++){
+      num+=character;
+  }
+  return num
+}
+console.log(repeatChar('*', 5)); // *****
+console.log(repeatChar('a', 3)); // aaa
+console.log(repeatChar('b', 0)); // (empty string)
+
+
+//Viết một hàm arrayToHTMLList nhận vào một mảng các chuỗi và trả về một chuỗi HTML. 
+// Chuỗi HTML này sẽ thể hiện một danh sách không sắp xếp (<ul>) với mỗi phần tử của 
+// mảng được biểu diễn bằng một mục danh sách (<li>).
+// Sample usage
+function arrayToHTMLList(array) {
+  let html = '<ul>';
+  for (let i = 0; i < array.length; i++) {
+      html += `<li>${array[i]}</li>`;
+  }
+  html += '</ul>';
+  return html;
+}
+console.log(arrayToHTMLList(['HTML', 'CSS', 'JavaScript']));
+// <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+
+
+//Viết một hàm linearSearch nhận vào hai tham số: một mảng số nguyên arr và một giá trị target cần tìm. 
+// Hàm này sẽ thực hiện tìm kiếm trong mảng: nếu tìm thấy target, trả về vị trí (index) của target trong mảng; 
+// nếu không tìm thấy, trả về -1.
+
+// Sample usage
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) return i;
+  }
+  return -1;
+}
+ console.log(linearSearch([5, 3, 7, 6, 2, 9], 6)); // 3
+ console.log(linearSearch([5, 3, 7, 6, 2, 9], 10)); // -1
