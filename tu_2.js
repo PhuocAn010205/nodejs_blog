@@ -621,3 +621,16 @@ function linearSearch(arr, target) {
 }
  console.log(linearSearch([5, 3, 7, 6, 2, 9], 6)); // 3
  console.log(linearSearch([5, 3, 7, 6, 2, 9], 10)); // -1
+
+
+ function testAge(age){
+  for (let i = 0; i < testAge.length; i++) {
+    if (age >= 18 && age <= 60) {
+      console.log(`Độ tuổi ${age}: Hợp lệ`);
+    } else {
+      console.log(`Độ tuổi ${age}: Không hợp lệ`);
+    }
+  }
+ }
+
+ console.log(testAge([20, 22, 35, 61, 17, 58])); // true
