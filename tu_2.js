@@ -623,9 +623,11 @@ function linearSearch(arr, target) {
  console.log(linearSearch([5, 3, 7, 6, 2, 9], 10)); // -1
 
 
- function testAge(age){
-  for (let i = 0; i < testAge.length; i++) {
+ function testAge(ageArr) {
+  for (let i = 0; i < ageArr.length; i++) {
+    let age = ageArr[i];
     if (age >= 18 && age <= 60) {
+
       console.log(`Độ tuổi ${age}: Hợp lệ`);
     } else {
       console.log(`Độ tuổi ${age}: Không hợp lệ`);
@@ -634,3 +636,34 @@ function linearSearch(arr, target) {
  }
 
  console.log(testAge([20, 22, 35, 61, 17, 58])); // true
+
+ // while 
+
+ function timUCLN(a,b){
+  if(b>a){
+      const temp = a;
+      a = b;
+      b = temp; 
+  }
+  while(b !== 0){
+      const temp = b;
+      b = a % b;
+      a = temp;
+  }
+  return a;
+  // trả về UCLN
+ }
+ console.log(timUCLN(60, 48)); // 12
+
+ function timUCLNC2(a,b){
+  while(a !==b){
+    if(a>b){
+      a = a-b;
+  }else{
+      b = b-a;
+    }
+  }
+  return a;
+  // trả về UCLN
+ }
+ console.log(timUCLNC2(60, 48)); // 12
